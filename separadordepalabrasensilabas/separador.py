@@ -1,16 +1,27 @@
 # Separador de Palabras en Sílabas, Python 3
 
 def main():
-    print("hola mundo")
+    palabras = ["transgresor", "123", "monstruo", "murcielago", "abecedario", "palabras", "sol",
+                "dia", "luna", "idea", "consejo", "enciclopedia", "genio", "mariscal#"]
+    for palabra in palabras:
+        print(esPalabra(palabra))
+
 
 # Separa una palabra en silabas
 def separarPalabraEnSilabas(palabra):
     return None
 
 
-# determina si un string es una palabra
+# Retorna True si un texto es enteramente una palabra
 def esPalabra(texto):
-    return True
+    # EXCEPCIÓN TIPO DE TEXTO INT
+    letras_del_texto = list(texto)
+    es_palabra = True
+    abecedario = "abcdefghijklmnñopqrstuvwxyzáéíóú"
+    for i in letras_del_texto:
+        if i not in abecedario:
+            es_palabra = False
+    return es_palabra
 
 # determina si un pedazo de string es una consonante
 def esConsonante(texto):
